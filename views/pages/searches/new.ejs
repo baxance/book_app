@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/base.css">
+
+</head>
+<body>
+
+  <a href="/" title="home page">Home Page</a>
+
+  <form action="/bookSearch" method="post">
+    <fieldset>
+      <legend>Search Books By...</legend>
+      <input type="text" name="inputText">
+      Author
+      <input type="radio" name="type" value="author">
+      Title
+      <input type="radio" name="type" value="title">
+      <input type="submit">
+    </fieldset>
+
+    <h2>Results</h2>
+
+    <ul>
+
+
+      <li>Title</li>
+      <li>Author</li>
+      <li>Description</li>
+    </ul>
+
+  </form>
+
+</body>
+</html>
