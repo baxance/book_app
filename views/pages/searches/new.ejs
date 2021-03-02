@@ -1,41 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/modules.css">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/styles/base.css">
-
 </head>
 <body>
   <header>
-    <h1>B O O K S</h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="/" title="home page">Home Page</a>
-        </li>
-        <li>
-          <a href="/" title="home page">Home Page</a>
-        </li>
-        <li>
-          <a href="/" title="home page">Home Page</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <a href="/" title="home page">Home Page</a>
-
+    <h1 id="title">B O O K S</h1>
+    <div><a href="/" title="home">Home</a></div>
+    <div><a href="/searches/new" title="search">Search</a></div>
+</header>
   <form action="/new" method="post">
     <fieldset>
-      <legend>Search Books By...</legend>
-      <input type="text" name="inputText">
-      Author
-      <input type="radio" name="type" value="author">
-      Title
-      <input type="radio" name="type" value="title">
-      <input type="submit">
+      <legend>Search Books By Author or Title</legend>
+      <input type="text" name="inputText" placeholder="Enter Author or Title...">
+      <label> Author
+        <input type="radio" name="type" value="author">
+      </label>
+      <label> Title
+        <input type="radio" name="type" value="title">
+      </label>
+        <input type="submit">
     </fieldset>
 
   </form>

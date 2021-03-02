@@ -1,0 +1,111 @@
+body {
+  width: 480px;
+}
+
+header {
+  text-align: center;
+  font-size: x-large;
+}
+
+div {
+  display:inline-block;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+fieldset {
+  text-align: center;
+  margin-top: 5%;
+}
+
+legend {
+  font-size: large;
+  font-style: italic;
+  width: 100%;
+}
+
+input {
+  text-align: center;
+  display:inline-block;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+label {
+  text-align: center;
+  display: inline-block;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+h2 {
+  font-size: large;
+  text-align: center;
+}
+
+ul {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+li {
+  list-style-type: disc;
+}
+
+@media(min-width: 768px) {
+  body {
+    width: 960px;
+  }
+
+  header {
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  div {
+    display:inline-block;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  fieldset {
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  legend {
+    font-size: large;
+    font-style: italic;
+    width: 100%;
+  }
+  
+  input {
+    text-align: center;
+    display:inline-block;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  
+  label {
+    text-align: center;
+    display: inline-block;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  
+  h2 {
+    font-size: large;
+    text-align: center;
+  }
+  
+  ul {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  
+  li {
+    list-style-type: disc;
+  }
+  
+
+}
