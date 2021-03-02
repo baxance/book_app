@@ -1,8 +1,5 @@
-body {
-  background: gray;
-}
-
 * {
+  background: gray;
   border: black solid thin;
   color: black;
 }
