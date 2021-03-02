@@ -13,10 +13,19 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({extended:true})); // puts form data into the request body
 app.set('view engine', 'ejs');
 
+///////////////////////////// Render Pages
+
 app.get('/', (req, res) => {
   res.render('pages/index.ejs')
 });
-app.post('/bookSearch', searchBooks);
+
+app.get('/searches/new', (req, res) => {
+  res.render('pages/searches/new.ejs')
+});
+
+app.post('/new', searchBooks);
+
+////////////////////////////API 
 
 function searchBooks(req, res){
   console.log(req.body);
@@ -28,23 +37,21 @@ function searchBooks(req, res){
     });
     console.log(books)
     console.log(output)
-    res.render('pages/searches/show.ejs', output);
+    res.render('pages/searches/show.ejs', {output:output});
   })
   .catch(error => {
     res.status(300).send(error)
   });
 }
 
+/////////////////////////// Constructor
+
 function Books (bookData) {
-  this.title = bookData.volumeInfo.title;
-  this.author = bookData.volumeInfo.authors[0];
-  this.description = bookData.volumeInfo.description;
+  this.image = bookData.volumeInfo.imageLinks.thumbnail || `https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png`;
+  this.title = bookData.volumeInfo.title || 'Nothing by this title found';
+  this.author = bookData.volumeInfo.authors[0] || 'Nothing by this Author found'; 
+  this.description = bookData.volumeInfo.description || 'No description available';
 }
 
-
-
-app.get('/searches/new', (req, res) => {
-  res.render('pages/searches/new.ejs')
-});
 
 app.listen(PORT, () => console.log(`up on http://localhost:${PORT}`));

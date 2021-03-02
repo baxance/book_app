@@ -8,7 +8,15 @@
 </head>
 <body>
 
-  <h1>Results</h1>
-  
+  <h2>Results</h2>
+    <ul>
+      <% for (let data of output) { %>
+        <li> <img src="<%= data.image %>" alt=""></li>
+        <li><%= data.title %></li>
+        <li><%= data.author %></li>
+        <li><%= data.description %></li>
+      <% } %> 
+      </ul>
+
 </body>
 </html>
