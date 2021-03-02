@@ -3,6 +3,6 @@ body {
 }
 
 * {
-  border: black solid thick;
+  border: black solid thin;
   color: black;
 }
