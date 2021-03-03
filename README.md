@@ -8,16 +8,18 @@
 Front-endWebsite that allows users to input search terms for books based on book title/keyword and author, and a server that will search an API with those search terms and return the results to the Front End
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+lolidk come back to this dude
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+psql, ejs, express, superagent
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples: -->
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
 03-01-2021 1300 - Repository created, files configured
+03-02-2021 1608 - Forced 'http:' to 'https:' to fix images breaking the page
+03-02-2021 1633 - Files configured for lab 12
 
 Number and name of feature: ________________________________
 
