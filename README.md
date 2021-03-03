@@ -20,6 +20,8 @@ psql, ejs, express, superagent
 03-01-2021 1300 - Repository created, files configured
 03-02-2021 1608 - Forced 'http:' to 'https:' to fix images breaking the page
 03-02-2021 1633 - Files configured for lab 12
+03-02-2021 1937 - More bugfixes on the constructor
+03-02-2021 2001 - built table and seed data, idk how to put that seed data in the table
 
 Number and name of feature: ________________________________
 
