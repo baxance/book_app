@@ -4,15 +4,15 @@
 -- createdb NAME -- create a new db from the command line, NOT executed from within psql
 
 
--- DROP TABLE IF EXISTS
+-- DROP TABLE books
 
 CREATE TABLE books (
   id SERIAL PRIMARY KEY,
   author VARCHAR(255),
   title VARCHAR(255),
-  isbn VARCHAR(255),
+  isbn NUMERIC,
   image_url VARCHAR(255),
-  description VARCHAR(255)
+  book_desc VARCHAR(255)
 )
 
 -- psql -d books_app -f /data/books.sql
