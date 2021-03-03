@@ -28,14 +28,15 @@ app.post('/new', searchBooks);
 ////////////////////////////API 
 
 function searchBooks(req, res){
-  console.log(req.body);
+
   const url = `https://www.googleapis.com/books/v1/volumes?q=in${req.body.type}:${req.body.inputText}`;
   superagent.get(url)
   .then(books => {
-    const output = books.body.items.map(bookData => {
-      return new Books(bookData);
+    // console.log('in the promise')
+    const output = books.body.items.map((bookData) => {
+      let results = new Books(bookData);
+      return results;
     });
-    console.log(books)
     console.log(output)
     res.render('pages/searches/show.ejs', {output:output});
   })
@@ -47,11 +48,10 @@ function searchBooks(req, res){
 /////////////////////////// Constructor
 
 function Books (bookData) {
-  this.image = bookData.volumeInfo.imageLinks.thumbnail || `https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png`;
+  this.image = (bookData.volumeInfo.imageLinks && bookData.volumeInfo.imageLinks.thumbnail) ? bookData.volumeInfo.imageLinks.thumbnail.replace(/http/i, 'https') : 'https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png';
   this.title = bookData.volumeInfo.title || 'Nothing by this title found';
   this.author = bookData.volumeInfo.authors[0] || 'Nothing by this Author found'; 
   this.description = bookData.volumeInfo.description || 'No description available';
 }
-
 
 app.listen(PORT, () => console.log(`up on http://localhost:${PORT}`));

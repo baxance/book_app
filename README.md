@@ -1,10 +1,11 @@
 # book_app
 
 **Author**: Barrett Nance
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.4 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-Website that allows users to input search terms for books based on book title/keyword and author, and a server that will search an API with those search terms and return the results to the Front End
+
+Front-endWebsite that allows users to input search terms for books based on book title/keyword and author, and a server that will search an API with those search terms and return the results to the Front End
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
