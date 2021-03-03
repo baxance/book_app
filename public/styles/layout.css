@@ -54,7 +54,7 @@ li {
 
 @media(min-width: 768px) {
   body {
-    width: 960px;
+    width: 100%;
   }
 
   header {
@@ -105,6 +105,10 @@ li {
   
   li {
     list-style-type: disc;
+  }
+
+  #image {
+    height: 300px;
   }
   
 

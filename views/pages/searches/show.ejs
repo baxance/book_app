@@ -18,7 +18,7 @@
   <h2>Search Results</h2>
     <ul id="books">
       <% for (let data of output) { %>
-        <img src="<%= data.image %>" alt="">
+        <img id="image" src="<%= data.image %>" alt="book cover">
         <li><%= data.title %></li>
         <li><%= data.author %></li>
         <li><%= data.description %></li>
