@@ -3,6 +3,7 @@
 const express = require('express');
 require('dotenv').config();
 const superagent = require('superagent');
+const pg = require('pg');
 
 const app = express();
 const PORT = process.env.PORT;
@@ -13,17 +14,28 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({extended:true})); // puts form data into the request body
 app.set('view engine', 'ejs');
 
+// DB Setup
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', err => console.error(err));
+
 ///////////////////////////// Render Pages
 
-app.get('/', (req, res) => {
-  res.render('pages/index.ejs')
-});
+app.get('/', defaultBooks);
 
 app.get('/searches/new', (req, res) => {
   res.render('pages/searches/new.ejs')
 });
 
 app.post('/new', searchBooks);
+
+function defaultBooks(req, res){
+  let SQL = 'SELECT * from books;';
+  client.query(SQL)
+    .then(results => {
+      let books = results.rows
+      res.render('pages/index.ejs', {bookResults : books})
+    })
+}
 
 ////////////////////////////API 
 
@@ -53,4 +65,7 @@ function Books (bookData) {
   this.description = (bookData.volumeInfo && bookData.volumeInfo.description) ? bookData.volumeInfo.description : 'No description available';
 }
 
-app.listen(PORT, () => console.log(`up on http://localhost:${PORT}`));
+client.connect()
+  .then(() => {
+    app.listen(PORT, () => console.log(`listening on port: ${PORT}`))
+  })
