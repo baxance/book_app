@@ -12,7 +12,7 @@ CREATE TABLE books (
   title VARCHAR(255),
   isbn VARCHAR(255),
   image_url VARCHAR(255),
-  book_desc VARCHAR(255)
+  book_desc TEXT
 );
 
 -- psql -d books_app -f data/books.sql
